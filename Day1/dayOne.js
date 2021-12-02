@@ -6,7 +6,7 @@ const lines = fs
   .map((x) => parseInt(x));
 
 //Advant of code 2021 day 1 question 1
-//Function check of number 2 is bigger than number 1
+//Function checks of number 2 is bigger than number 1
 const isNumberBiggerThamPrevious = () => {
   let number = 0;
   for (let i = 0; i < lines.length; i++) {
