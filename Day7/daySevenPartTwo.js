@@ -24,15 +24,17 @@ const calculateFuelCost = (distance) => {
 
   return cost;
 };
+const calculate = () => {
+  for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++) {
+    const fuelCost = numbers.reduce((total, position) => {
+      return total + calculateFuelCost(Math.abs(i - position));
+    }, 0);
 
-for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++) {
-  const fuelCost = numbers.reduce((total, position) => {
-    return total + calculateFuelCost(Math.abs(i - position));
-  }, 0);
-
-  if (fuelCost < minimumFuelCost) {
-    minimumFuelCost = fuelCost;
+    if (fuelCost < minimumFuelCost) {
+      minimumFuelCost = fuelCost;
+    }
   }
-}
+  return minimumFuelCost;
+};
 
-console.log(minimumFuelCost);
+console.log(calculate());
